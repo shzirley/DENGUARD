@@ -769,7 +769,7 @@ function PatientDetail({ patient, setScreen, role }: { patient: Patient; setScre
   const [tab, setTab] = useState<PatientTab>('ringkasan')
   const [showMonModal, setShowMonModal] = useState(false)
   const [showCatatan, setShowCatatan] = useState(false)
-  const notes = useStore(s => s.doctorNotes[patient.id] || [])
+  const notes = useStore(s => s.doctorNotes[patient.id]) || []
   const addNote = useStore(s => s.addNote)
 
   const tabs: { id: PatientTab; label: string }[] = [
@@ -877,7 +877,7 @@ function PatientDetail({ patient, setScreen, role }: { patient: Patient; setScre
 // ─── TAB: RINGKASAN ───────────────────────────────────────────────────────────
 
 function RingkasanTab({ patient, setTab, role, notes }: { patient: Patient; setTab: (t: PatientTab) => void; role: Role; notes: DoctorNote[] }) {
-  const history = useStore(s => s.monitoringHistory[patient.id] || [])
+  const history = useStore(s => s.monitoringHistory[patient.id]) || []
   const latest = history[history.length - 1]
   const prev = history[history.length - 2]
   
@@ -1182,7 +1182,7 @@ function MonitoringTab({ patient, role }: { patient: Patient; role: Role }) {
   const [range, setRange] = useState<'12' | '24' | '48' | 'all'>('24')
   const [showHct, setShowHct] = useState(true)
   const [showPlt, setShowPlt] = useState(true)
-  const history = useStore(s => s.monitoringHistory[patient.id] || [])
+  const history = useStore(s => s.monitoringHistory[patient.id]) || []
   const entries = history
   const [koreksiTarget, setKoreksiTarget] = useState<MonitoringEntry | null>(null)
 
@@ -1490,8 +1490,8 @@ function DSSTab({ patient }: { patient: Patient }) {
 function TimelineTab({ patient, notes }: { patient: Patient; notes: DoctorNote[] }) {
   const [showExport, setShowExport] = useState(false)
   const [logView, setLogView] = useState<'timeline' | 'notes' | 'log'>('timeline')
-  const timelineEvents = useStore(s => s.timelineEvents[patient.id] || [])
-  const monitoringHistory = useStore(s => s.monitoringHistory[patient.id] || [])
+  const timelineEvents = useStore(s => s.timelineEvents[patient.id]) || []
+  const monitoringHistory = useStore(s => s.monitoringHistory[patient.id]) || []
 
   const typeConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
     info: { label: 'Info', color: '#6B7280', bg: '#F4F8FF', border: '#DBEAFE' },
