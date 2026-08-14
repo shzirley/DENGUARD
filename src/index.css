@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  /* DENGUARD GSM brand colors */
+  --color-brand-primary: #2563FF;
+  --color-brand-secondary: #4A8CF7;
+  --color-brand-accent: #A78BFA;
+  --color-brand-dark: #0D1326;
+  --color-brand-light: #EAF2FF;
+  --color-brand-lilac: #E9D8FF;
+
+  --color-surface-bg: #EAF2FF;
+  --color-surface-primary: #FFFFFF;
+  --color-surface-secondary: #F4F8FF;
+  --color-surface-elevated: #FFFFFF;
+  --color-sidebar: #0D1326;
+  --color-sidebar-hover: #1A2540;
+
+  --color-text-primary: #0D1326;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6B7280;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border: #DBEAFE;
+  --color-border-strong: #BFDBFE;
+
+  --color-status-critical: #C62828;
+  --color-status-critical-bg: #FEF2F2;
+  --color-status-critical-border: #FECACA;
+  --color-status-high: #C2410C;
+  --color-status-high-bg: #FFF7ED;
+  --color-status-high-border: #FED7AA;
+  --color-status-attention: #B45309;
+  --color-status-attention-bg: #FFFBEB;
+  --color-status-attention-border: #FDE68A;
+  --color-status-stable: #166534;
+  --color-status-stable-bg: #F0FDF4;
+  --color-status-stable-border: #BBF7D0;
+
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+}
+
+* {
+  font-family: var(--font-sans);
+}
+
+.font-clinical {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

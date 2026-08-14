@@ -1,0 +1,10 @@
+{
+  "description": "Provides effective protection solutions against dengue by offering real-time alerts, prevention tips, and monitoring tools for at-risk communities.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
