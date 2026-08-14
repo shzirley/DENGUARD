@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useGoogleLogin } from '@react-oauth/google'
 import { jwtDecode } from 'jwt-decode'
-import logoImg from './assets/logo_trans.png';
+import { logoImg } from './assets/logoImg';
 import { useStore } from './store'
 import { Patient, Role, Priority, MonitoringEntry, DoctorNote } from './types'
 import {
